@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react'
 
+import { Link } from 'react-router-dom'
+import badge from '../../assets/images/badge.png'
+import facebook from '../../assets/images/facebook.png'
+import icon from '../../assets/images/icon.png'
+import logo from '../../assets/images/logo.png'
+import whatsapp from '../../assets/images/whatsapp.png'
+
 const Register = () => {
     const [fullname, setFullName] = useState("");
     const [username, setUserName] = useState("");
@@ -13,42 +20,79 @@ const Register = () => {
 
 
     return (
-        <div className='flex justify-around items-center bg-[#ebefff]'>
-            <section>
-                <img src="" alt="page badge" />
+        <div className='flex justify-around bg-blue-100'>
+            <section className='w-[45%] hidden md:flex'>
+                <img src={badge} alt="page badge"
+                    className='max-w-[70%] h-[550px] relative top-0 left-16 bottom-0'
+                />
             </section>
 
-            <section className='flex flex-col items-center text-justify border-[2px solid red]'>
-                <p>Please Fill out form to Register</p>
-                <form action="" method="post" onSubmit={HandleSubmit}>
-                    <div className='flex flex-col'>
-                        <label htmlFor="name">Full name</label>
-                        <input type="text" name='fullname' value={fullname} onChange={(e)=>setFullName(e.target.value)} />
+            <section className='md:w-[45%] w-full flex flex-col items-center text-justify py-16'>
+                <h5 className='text-center font-semibold text-gray-900 text-[1.1rem] py-4'>Please Fill out form to Register</h5>
+                <form action="" method="post" onSubmit={HandleSubmit} className='md:w-[70%] w-[80%]'>
+                    <div className='flex flex-col mb-4'>
+                        <label htmlFor="name" className='text-[1.1rem] font-medium'>Full name</label>
+                        <input
+                            className='h-[36px] rounded-3xl bg-blue-100 border border-solid border-blue-500 px-4 py-2'
+                            type="text"
+                            name='fullname'
+                            value={fullname}
+                            onChange={(e) => setFullName(e.target.value)}
+                        />
                     </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="username">Username</label>
-                    <input type="text" name='username' value={username} onChange={(e)=>setUserName(e.target.value)} />
-                </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="email">email</label>
-                    <input type="email" name='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
-                </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="password">Password</label>
-                    <input type="password" name='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
-                </div>
-                <div className='flex flex-col'>
-                    <label htmlFor="confirmPassword">Confirm Password</label>
-                    <input type="password" name='confirm_password' value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)} />
-                </div>
+                    <div className='flex flex-col mb-4'>
+                        <label htmlFor="username" className='text-[1.1rem] font-medium'>Username</label>
+                        <input
+                            className='h-[36px] rounded-3xl bg-blue-100 border border-solid border-blue-500 px-4 py-2'
+                            type="text"
+                            name='username'
+                            value={username}
+                            onChange={(e) => setUserName(e.target.value)}
+                        />
+                    </div>
+                    <div className='flex flex-col mb-4'>
+                        <label htmlFor="email" className='text-[1.2rem] font-medium'>email</label>
+                        <input
+                            className='h-[36px] rounded-3xl bg-blue-100 border border-solid border-blue-500 px-4 py-2'
+                            type="email" name='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className='flex flex-col mb-4'>
+                        <label htmlFor="password" className='text-[1.2rem] font-medium'>Password</label>
+                        <input
+                            className='h-[36px] rounded-3xl bg-blue-100 border border-solid border-blue-500 px-4 py-2'
+                            type="password"
+                            name='password'
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                        />
+                    </div>
+                    <div className='flex flex-col mb-4'>
+                        <label htmlFor="confirmPassword" className='text-[1.2rem] font-medium'>Confirm Password</label>
+                        <input
+                           className='h-[36px] rounded-3xl bg-blue-100 border border-solid border-blue-500 px-4 py-2'
+                            type="password"
+                            name='confirm_password'
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                        />
+                    </div>
 
-                <div className=''>
-                    <button type='submit'>Register</button>
-                </div>
-                    <p>
-                        Yes i have an account, <a href="#">Login</a>
+                    <div className='my-4'>
+                        <button type='submit' className='bg-[#656ed3] rounded-3xl text-[1.1rem] w-full text-white p-[0.3rem]'>Register</button>
+                    </div>
+                    <p className='text-center text-[1.2rem] font-medium'>
+                        Yes i have an account, <a href="login">login</a>
                     </p>
                 </form>
+
+                <div className='flex justify-center pt-6'>
+                    <a href="#"><img src={facebook} alt="facebook-link" /></a>
+                    <a href=""><img src={whatsapp} alt="whatsapp-link" className='px-4'/></a>
+                    <a href=""><img src={icon} alt="site link" /></a>
+                </div>
 
             </section>
 
