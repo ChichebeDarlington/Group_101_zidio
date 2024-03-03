@@ -1,9 +1,14 @@
 import "./App.css";
 
+import Register from "./components/register/register";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-3xl text-blue-700 font-serif text-center">Zidio Group 101 project</h1>
+    <div className="text-center text-xl">
+      <h1 className="text-3xl text-blue-700 font-san serif text-center font-bold">
+        Zidio Group 101 project
+      </h1>
+      <Register/>
     </div>
   );
 }
