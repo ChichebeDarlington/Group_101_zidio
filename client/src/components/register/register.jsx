@@ -1,10 +1,8 @@
-import React, {useEffect, useState} from 'react'
-
-import { Link } from 'react-router-dom'
+import axios from 'axios'
 import badge from '../../assets/images/badge.png'
 import facebook from '../../assets/images/facebook.png'
 import icon from '../../assets/images/icon.png'
-import logo from '../../assets/images/logo.png'
+import { useState } from 'react'
 import whatsapp from '../../assets/images/whatsapp.png'
 
 const Register = () => {
@@ -14,8 +12,19 @@ const Register = () => {
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
-    const HandleSubmit = (e) => {
+    const HandleSubmit = async(e) => {
         e.preventDefault();
+
+        try {
+            const response = await axios.post('link to backend api/register', {
+                fullname, username, email, password,confirmPassword
+            });
+            console.log(response.data);
+
+        }catch (error) {
+            console.log(error, 'error');
+        }
+
     }
 
 
