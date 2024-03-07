@@ -1,13 +1,20 @@
 import "./App.css";
-
-import Register from "./components/register/register";
+import { indexRoutes } from "./routes/indexRoutes";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="text-center">
-
-      <Register/>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          {indexRoutes.map(({ component: Component, ...item }) => {
+            return (
+              <Route path={item.path} element={<Component />} key={item.name} />
+            );
+          })}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
