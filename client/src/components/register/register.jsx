@@ -42,7 +42,7 @@ const Register = () => {
 
       <section className="md:w-[45%] w-full flex flex-col items-center text-justify py-16">
         <h5 className="text-center font-semibold text-gray-900 text-[1.1rem] py-4">
-          Please Fill out form to Register
+          Please Fill out this form to Register
         </h5>
         <form
           action=""
