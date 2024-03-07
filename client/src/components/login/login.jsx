@@ -1,8 +1,8 @@
-import laptop from "../../assets/images/laptop.svg";
+import { Link } from "react-router-dom";
 import darkElem from "../../assets/images/darkElem.svg";
+import laptop from "../../assets/images/laptop.svg";
 import lighterElem from "../../assets/images/lighterElem.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 const Login = () => {
   const [userEmail, setUserEmail] = useState("");
@@ -12,7 +12,7 @@ const Login = () => {
     <section
       className="bg-offWhite h-screen overflow-y-hidden pt-[20vh]
       md:bg-gradient-to-r from-offWhite from-70% to-bodyPurple to-30% md:pt-0
-   
+
     "
     >
       <div className="max-sm:pl-4 max-md:pl-4 pl-[7rem]">
@@ -21,8 +21,8 @@ const Login = () => {
             action=""
             method="get"
             className="md:w-[45%] w-[90%]
-            
-           flex flex-col gap-4 
+
+           flex flex-col gap-4
         "
           >
             <h2 className="font-bold text-center">Welcome Back!</h2>
@@ -66,7 +66,7 @@ const Login = () => {
             </div>
             <p>
               Dont have an account?{" "}
-              <Link to={"/register"} className="hover:text-borderPurple">
+              <Link to={"/"} className="hover:text-borderPurple">
                 Register
               </Link>
             </p>
