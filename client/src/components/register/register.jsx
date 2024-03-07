@@ -1,10 +1,11 @@
-// import axios from 'axios'
+import { Link } from "react-router-dom";
+import axios from 'axios'
 import badge from "../../assets/images/badge.png";
 import facebook from "../../assets/images/facebook.png";
 import icon from "../../assets/images/icon.png";
 import { useState } from "react";
 import whatsapp from "../../assets/images/whatsapp.png";
-import { Link } from "react-router-dom";
+
 const Register = () => {
   const [fullname, setFullName] = useState("");
   const [username, setUserName] = useState("");
